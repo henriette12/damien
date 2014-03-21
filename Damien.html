@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Damien</title>
+</head>
+
+<body style="background-color:black;">
+	<div style="background-color:white;width:200px;height:400px;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:auto;">
+		<div id="text" style="height:100px;margin-top:50px;">
+		
+		</div>
+		<div style="margin-left:auto;margin-right:auto;width:200px;">
+			<button onclick="generateActivity()">Next</button>
+		</div>
+	</div>
+</body>
+
+<script>
+	var vors=["middag på Nighthawk", "kaffe på Cafe Sara", "spise en hel gris på The Crow", "burger på Illegal Burger", "pils på Astoria", "pils på Kulturhuset", "vin på Kunstnerens Hus", "vin og mat på Palace Grill", "øl på Den Gamle Major", "et show på Latter", "biljard på Dr. Jekylls Pub"];
+	var downtown=["shots på Blaze", "champagne på Bølgen & Moi Briskeby", "shuffleboard på Tilt", "pinball konkurranse på Tilt", "spise en hel gris på The Crow", "ølsmaking på The Crow", "shots på The Villa", "pils på Astoria", "pils på Kulturhuset", "rocke dansegulvet på Dattera til Hagen", "vin på Kunstnerens Hus", "heftig klubbing på Blå", "øl på Den Gamle Major", "et show på Latter", "shots på Revolver", "litt whiskey på Scotsman", "biljard på Dr. Jekylls Pub", "whiskey på Dr. Jekylls Pub"];
+
+	var intro=["Hva med","Hadde det ikke vært digg med","Kjør på med"];
+	var outro=["etterfulgt av","også smeller du på med","fulgt opp med"];
+	
+	var activity = "";
+	var counter = 0;
+	
+	function generateActivity() {
+		counter++;
+		activity = "";
+		if(counter > 10) {
+			activity = "Fuck det då, ta en runk";
+		} else {
+			activity += intro[Math.floor((Math.random()*intro.length))] + " ";
+			activity += vors[Math.floor((Math.random()*vors.length))] + " ";
+			activity += outro[Math.floor((Math.random()*outro.length))] + " ";
+			activity += downtown[Math.floor((Math.random()*downtown.length))];
+		}
+		//alert(activity);
+		document.getElementById("text").innerHTML=activity;
+	}	
+</script>
+
+</html>
